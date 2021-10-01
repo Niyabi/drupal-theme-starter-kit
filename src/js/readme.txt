@@ -1,0 +1,1 @@
+Add js files here, critical js to critical subfolder.

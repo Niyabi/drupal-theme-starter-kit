@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Create Twig variable with critical CSS.
+ * Read critical css file content to variable and set Twig variable with citical CSS.
+ * Critical CSS will be available as Twig Variable "criticalCss" in html.html.twig file
+ * 
+ * Function naming: ThemeMachineName_preprocess_Hook
+ * ThemeMachineName: set in *.info.yml file as "name"
+ * Hook: Hook to which function should be attached to, twig template file
+ *
+ * @param array $variables
+ * @return void
+ */
+function themestarterkit_preprocess_html(array &$variables){
+    $criticalCss = file_get_contents(__DIR__."/public/styles/critical/critical_index.css");
+    $variables['criticalCss'] = $criticalCss;
+}

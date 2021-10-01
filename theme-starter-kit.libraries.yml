@@ -1,0 +1,13 @@
+global-css:
+  css:
+    theme:
+      public/styles/base/base_index.css: { minified: true, }
+
+global-css-critical:
+  css:
+    theme:
+      public/styles/critical/critical_index.css: { minified: true, }
+
+global-js:
+  js:
+    public/js/theme_js_index.js: { minified: true, }
