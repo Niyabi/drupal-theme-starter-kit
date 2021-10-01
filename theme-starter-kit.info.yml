@@ -6,8 +6,8 @@ base theme: false
 
 
 libraries:
-  - natsuki/global-css
-  - natsuki/global-js
+  - theme-starter-kit/global-css
+  - theme-starter-kit/global-js
 
 libraries-override:
   system/base:
