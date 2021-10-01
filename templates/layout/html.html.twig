@@ -32,9 +32,13 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
 
     {# Critical CSS #}
-    <style>
-      {{ criticalCss }}
-    </style>
+    {% if criticalCss is defined and criticalCss != "" %}
+      <style>
+        {{ criticalCss }}
+      </style>
+    {% else %}
+      <css-placeholder token="{{ placeholder_token }}">
+    {% endif %}
 
     {# Critical JS, in *libraries.yml add "header: true" to put js to <head> #}
     <js-placeholder token="{{ placeholder_token }}">
@@ -51,8 +55,11 @@
     {{ page }}
     {{ page_bottom }}
 
-    {# Styles #}
-    <css-placeholder token="{{ placeholder_token }}">
+    {# Styles is critical css is set #}
+    {% if criticalCss is defined and criticalCss != "" %}
+      <css-placeholder token="{{ placeholder_token }}">
+    {% endif %}
+
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>
